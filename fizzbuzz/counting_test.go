@@ -1,8 +1,9 @@
 package fizzbuzz_test
 
 import (
-	"github.com/aceakash/go-tdd-template/fizzbuzz"
 	"testing"
+
+	"github.com/aceakash/go-tdd-template/fizzbuzz"
 )
 
 func TestCounting(t *testing.T) {
@@ -22,5 +23,25 @@ func TestCounting(t *testing.T) {
 		if got != want {
 			t.Errorf("wanted %v but got '%v'", want, got)
 		}
+	})
+
+	t.Run("Given 2, we want '1 2'", func(t *testing.T) {
+		got := fizzbuzz.Count(2)
+		want := "1 2"
+
+		if got != want {
+			t.Errorf("wanted %v but got '%v'", want, got)
+		}
+
+	})
+
+	t.Run("Given 3, we want '1 2 fizz'", func(t *testing.T) {
+		got := fizzbuzz.Count(3)
+		want := "1 2 fizz"
+
+		if got != want {
+			t.Errorf("wanted %v but got '%v'", want, got)
+		}
+
 	})
 }
