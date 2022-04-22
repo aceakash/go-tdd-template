@@ -10,16 +10,13 @@ func Count(num int) string {
 		return ""
 	}
 
-	if num == 2 {
-		output := []string{}
-		for i := 1; i <= num ; i++ {
-			output = append(output, strconv.Itoa(i))
+	output := []string{}
+	for i := 1; i <= num; i++ {
+		if i == 3 {
+			output = append(output, "fizz")
+			continue
 		}
-		return strings.Join(output, " ")
+		output = append(output, strconv.Itoa(i))
 	}
-
-	if num == 3 {
-		return "1 2 fizz"
-	}
-	return strconv.Itoa(num)
+	return strings.Join(output, " ")
 }
